@@ -22,13 +22,16 @@ class PageList extends Component {
                 dataSource={this.state.data}
                 renderItem={item => (
                     <List.Item>
-                        <div onClick={()=>{
+                        {/* <div onClick={()=>{
                             window.location.href= item.guid.rendered
                         }}
                         on
                         >
                             {item.title.rendered}
-                        </div>
+                        </div> */}
+                        <Link to={`/detail/id=${item.id}`}>
+                            {item.title.rendered}
+                        </Link>
                     </List.Item>
                 )}
             />
