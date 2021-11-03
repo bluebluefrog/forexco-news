@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Layout } from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less';
 import AppHeader from './Header/index.js';
+import PageList from './Content/index.js';
 import './index.css';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -17,9 +18,12 @@ class App extends Component{
             <AppHeader />
           </Header>
           <Content className='content'>
-            1</Content>
+          <Switch>
+            <Route path='/' component={PageList} />
+          </Switch>
+          </Content>
           <Footer className='footer'>
-            2
+            @copy right
           </Footer>
         </Layout>
       </BrowserRouter>
